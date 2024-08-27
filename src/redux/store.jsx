@@ -1,10 +1,16 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import { legacy_createStore as createStore } from "redux";
+import todoReducer from "./reducers/todoReducer";
+import counterReducer from "./reducers/counterReducer";
 
 
-combineReducers({
 
-counterReducer:
+
+const topluReducer= combineReducers({
+
+counterReducer:counterReducer,
+todoReducer:todoReducer
+
 
 
 })
@@ -15,4 +21,4 @@ counterReducer:
 
 
 
-export const store=createStore();
+export const store=createStore(topluReducer);
